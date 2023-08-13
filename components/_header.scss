@@ -1,0 +1,153 @@
+$primary-color: #877afd;
+$primary2-color: #7debcd;
+
+// start header
+header {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+      h3 {
+        font-size: 30px;
+
+        span {
+          color: $primary-color;
+        }
+      }
+      img {
+        width: 155px;
+      }
+    }
+
+    .info {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+
+      .links {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .link {
+          font-weight: 500;
+          font-size: 17px;
+          height: 100%;
+          padding: 20px 0px;
+          cursor: pointer;
+
+          svg {
+            width: 14px;
+          }
+
+          &.active,
+          &:hover {
+            color: $primary-color !important;
+          }
+        }
+
+        .link_list {
+          position: relative;
+
+          &:hover {
+            .list {
+              opacity: 1;
+              z-index: 100;
+              top: 60px;
+            }
+          }
+
+          .list {
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
+            font-weight: 600;
+            padding: 8px 10px;
+            border-radius: 5px;
+            width: 170px;
+            border: 1px solid #e2e2e2;
+            opacity: 0;
+            z-index: -1;
+            transition: all 0.4s;
+
+            .item {
+              display: block;
+              font-weight: 600;
+              color: #37373c !important;
+
+              &:hover {
+                color: $primary-color !important;
+              }
+
+              &:not(:last-child) {
+                margin-bottom: 10px;
+              }
+            }
+          }
+        }
+      }
+
+      .btn_contact {
+        background: $primary-color;
+        color: white !important;
+        font-weight: 600;
+        padding: 7px 25px;
+        border-radius: 4px;
+        transition: all 0.4s;
+
+        &:hover {
+          color: $primary-color !important;
+          background-color: transparent;
+          border: 1px solid $primary-color;
+        }
+      }
+    }
+
+    .btn_menu {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 8px 0;
+    .container {
+      .logo {
+        h3 {
+          font-size: 25px;
+        }
+
+        img {
+          width: 150px;
+        }
+      }
+
+      .info {
+        .links {
+          display: none;
+        }
+
+        .btn_contact {
+          padding: 5px 15px;
+          font-size: 14px;
+          display: none;
+        }
+
+        .btn_menu {
+          display: block;
+          cursor: pointer;
+
+          svg {
+            width: 35px;
+          }
+        }
+      }
+    }
+  }
+}
+// end header
